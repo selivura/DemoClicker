@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ea5473ec66aa146aeba85274009b43, type: 3}
+  m_Name: DefaultGameRules
+  m_EditorClassIdentifier: 
+  _baseMaxExperience: 50
+  _maxExperienceMultPerLevel: 1.5
+  _coinPrefab: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
+  _tierChances:
+    _serializedList:
+    - Key: 0
+      Value: 80
+    - Key: 1
+      Value: 14
+    - Key: 2
+      Value: 3
+    - Key: 3
+      Value: 2
+    - Key: 4
+      Value: 1

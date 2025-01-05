@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f215d5f41b1bfbf4b887f140c24e3f83, type: 3}
+  m_Name: 05-Default_LT_SSS
+  m_EditorClassIdentifier: 
+  _loot:
+  - Drop:
+      item: {fileID: 5793994413163932349, guid: b6b6e677edbd6e04b84fb1120c44634d, type: 3}
+      amount: 1
+    Weight: 1
