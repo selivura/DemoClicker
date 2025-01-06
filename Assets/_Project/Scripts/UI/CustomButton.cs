@@ -12,13 +12,16 @@ namespace Selivura.DemoClicker.UI
         private void Awake()
         {
             _button = GetComponent<Button>();   
-            _button.onClick.AddListener(OnClick);
+            _button.onClick.AddListener(Click);
         }
         public void Click()
         {
             OnClick();
             OnButtonClick?.Invoke();
         }
-        protected abstract void OnClick();
+        protected virtual void OnClick()
+        {
+
+        }
     }
 }
