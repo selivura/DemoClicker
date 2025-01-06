@@ -1,9 +1,8 @@
-using UnityEngine;
 using Zenject;
 
-namespace Selivura.DemoClicker
+namespace Selivura.DemoClicker.UI
 {
-    public class ClickButton : ButtonBase
+    public class ClickButton : CustomButton
     {
         [Inject]
         ClickerService _clickerService;

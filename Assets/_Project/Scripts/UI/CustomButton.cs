@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Selivura.DemoClicker
+namespace Selivura.DemoClicker.UI
 {
     [RequireComponent(typeof(Button))]
-    public abstract class ButtonBase : MonoBehaviour
+    public abstract class CustomButton : MonoBehaviour
     {
         private Button _button;
+        public UnityEvent OnButtonClick;
         private void Awake()
         {
             _button = GetComponent<Button>();   
@@ -15,6 +17,7 @@ namespace Selivura.DemoClicker
         public void Click()
         {
             OnClick();
+            OnButtonClick?.Invoke();
         }
         protected abstract void OnClick();
     }

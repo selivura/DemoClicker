@@ -1,3 +1,4 @@
+using R3;
 using UnityEngine;
 
 namespace Selivura.DemoClicker
@@ -32,9 +33,16 @@ namespace Selivura.DemoClicker
         public int Stack => _stack;
         protected int _stack = 0;
 
+        public Subject<Item> OnStateChanged = new();
+
         private void Start()
         {
             OnInitialize();
+        }
+        public void SetIcon(Sprite icon)
+        {
+            _icon = icon;
+            OnStateChanged.OnNext(this);
         }
         protected virtual void OnInitialize()
         {
@@ -43,6 +51,7 @@ namespace Selivura.DemoClicker
         public void IncreaseStack(int amount)
         {
             _stack += amount;
+            OnStateChanged.OnNext(this);
         }
         protected virtual void OnStackIncreased(int amount) { }
 

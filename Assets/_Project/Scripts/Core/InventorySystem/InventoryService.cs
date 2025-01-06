@@ -1,3 +1,4 @@
+using R3;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -9,22 +10,25 @@ namespace Selivura.DemoClicker
         [Inject]
         private PlayerStatsService _statsController;
 
-        public List<Item> Items => _items;
-
         private readonly List<Item> _items = new();
 
+        public Subject<Item> OnItemAdded = new();
+        public Subject<Unit> OnInventoryChanged = new();
         public void GiveItem(Item itemPrefab, int amount)
         {
-            Item existingItem = _items.Find(delegate (Item compareItem) { return itemPrefab.ID == compareItem.ID; });
-            if(existingItem != null)
+            Item item = _items.Find(delegate (Item compareItem) { return itemPrefab.ID == compareItem.ID; });
+            if(item != null)
             {
-                existingItem.IncreaseStack(amount);
-                return;
+                item.IncreaseStack(amount);
             }
-
-            Item newItem = Instantiate(itemPrefab, transform);
-            _items.Add(newItem);
-            newItem.IncreaseStack(amount);
+            else
+            {
+                item = Instantiate(itemPrefab, transform);
+                _items.Add(item);
+                item.IncreaseStack(amount);
+            }
+            OnItemAdded.OnNext(item);
+            OnInventoryChanged.OnNext(Unit.Default);
         }
         public void GiveItem(ItemDrop itemDrop)
         {
@@ -33,6 +37,10 @@ namespace Selivura.DemoClicker
         public Item FindItemByID(string id)
         {
             return _items.Find(delegate (Item item) { return item.ID == id; });
+        }
+        public List<Item> GetItems()
+        {
+            return _items;  
         }
     }
 }
