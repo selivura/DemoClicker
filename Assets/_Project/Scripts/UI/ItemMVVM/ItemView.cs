@@ -13,5 +13,9 @@ namespace Selivura.DemoClicker.UI
         {
             disposable.Dispose();
         }
+        public void SelectSlot()
+        {
+            viewModel.SelectSlot();
+        }
     }
 }

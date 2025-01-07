@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4273161529948695921, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: m_Name
-      value: Coin Variant
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 5376861234429474648, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,8 +57,16 @@ PrefabInstance:
       value: item_coin
       objectReference: {fileID: 0}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
+      propertyPath: _icon
+      value: 
+      objectReference: {fileID: 3231236242939204343, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+    - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
+      propertyPath: price
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _description

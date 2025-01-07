@@ -29,7 +29,7 @@ namespace Selivura.DemoClicker.UI
             }
             else
             {
-                _itemViewModel.UpdateItem(_itemToSearch.Icon, 0, _itemToSearch.Quality);
+                _itemViewModel.UpdateItem(_itemToSearch.Icon, _itemToSearch.Sprite, 0, _itemToSearch.Quality, _itemToSearch.Name, _itemToSearch.Description, _itemToSearch.Price);
             }
         }
         private void OnItemAdded(Item item)

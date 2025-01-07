@@ -17,6 +17,8 @@ namespace Selivura.DemoClicker
 
         public Sprite Icon => _icon;
         [SerializeField] private Sprite _icon;
+        public Sprite Sprite => _sprite;
+        [SerializeField] private Sprite _sprite;
         public string Name => _name; 
         [SerializeField] private string _name;
 
@@ -29,9 +31,11 @@ namespace Selivura.DemoClicker
 
         public ItemQuality Quality => _quality;
         [SerializeField] private ItemQuality _quality;
+        public int Price => price;
+        [SerializeField] protected int price = 0;
 
-        public int Stack => _stack;
-        protected int _stack = 0;
+        public int Stack => stack;
+        protected int stack = 0;
 
         public Subject<Item> OnStateChanged = new();
 
@@ -50,7 +54,7 @@ namespace Selivura.DemoClicker
         }
         public void IncreaseStack(int amount)
         {
-            _stack += amount;
+            stack += amount;
             OnStateChanged.OnNext(this);
         }
         protected virtual void OnStackIncreased(int amount) { }

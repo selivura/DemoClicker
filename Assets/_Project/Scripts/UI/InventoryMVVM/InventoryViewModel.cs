@@ -14,6 +14,8 @@ namespace Selivura.DemoClicker.UI
         private void Awake()
         {
             _inventoryService.OnInventoryChanged.Subscribe(_ => OnInventoryChanged()).AddTo(disposable);
+            OnInventoryChanged();
+
         }
         private void OnInventoryChanged()
         {
