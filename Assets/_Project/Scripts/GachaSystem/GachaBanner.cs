@@ -1,6 +1,5 @@
 using AYellowpaper.SerializedCollections;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
 namespace Selivura.DemoClicker
@@ -13,22 +12,30 @@ namespace Selivura.DemoClicker
         public Sprite Icon => _icon;
         [SerializeField] private Sprite _icon;
 
+        public GameObject BannerGraphicsPrefab => _bannerGraphicsPrefab;
+        [SerializeField] private GameObject _bannerGraphicsPrefab;
+
         public string Name => _name;
         [SerializeField] private string _name;
 
         public string Description => _description;
+        [SerializeField][TextArea] private string _description; 
+        public string ID => _ID;
 
-        [SerializeField][TextArea] private string _description;
+        [SerializeField][TextArea] private string _ID = "gacha_banner_default";
+
+        public ItemPrice Key => _key;
+        [SerializeField] ItemPrice _key;
 
         [Header("Pity")]
 
         public ItemQuality SoftPityResetMinimalQuality => _softPityResetMinimalQuality;
         [SerializeField] private ItemQuality _softPityResetMinimalQuality = ItemQuality.S;
+
         public float SoftPityPerPull => _softPityPerPull;
         [SerializeField] private float _softPityPerPull = 0.1f;
 
         public Dictionary<ItemQuality, int> HardPityRequirements => _hardPityRequirements;
-
         [SerializedDictionary("Tier", "Guranteed amount of pulls")]
         [SerializeField] SerializedDictionary<ItemQuality, int> _hardPityRequirements = new();
 
@@ -36,12 +43,12 @@ namespace Selivura.DemoClicker
 
         public LootTable<ItemQuality> TierChances => _tierChances;
         [SerializeField] LootTable<ItemQuality> _tierChances;
-        public Dictionary<ItemQuality, LootTable<ItemDrop>> BannerDrops => _bannerDrops;
 
+        public Dictionary<ItemQuality, LootTable<ItemDrop>> BannerDrops => _bannerDrops;
         [SerializedDictionary("Tier", "LootTable")]
         [SerializeField] SerializedDictionary<ItemQuality, LootTable<ItemDrop>> _bannerDrops = new();
 
-        public GachaDrop Pull(BannerRollData data)
+        public GachaDrop Pull(BannerPullData data)
         {
             data.Pulls++;
 
@@ -95,6 +102,25 @@ namespace Selivura.DemoClicker
             return gachaDrop;
         }
     }
+    [System.Serializable]
+    public class ItemPrice
+    {
+        public Item Item => _item;
+        public int Price => _price;
+
+        [SerializeField] private Item _item;
+        [SerializeField] private int _price;
+
+        public ItemPrice()
+        {
+
+        }
+        public ItemPrice(Item item, int price)
+        {
+            _item = item;
+            _price = price;
+        }
+    }
     public class GachaDrop : ItemDrop
     {
         public ItemQuality DropQuality => _quality;
@@ -111,7 +137,7 @@ namespace Selivura.DemoClicker
         }
     }
     [System.Serializable]
-    public class BannerRollData
+    public class BannerPullData
     {
         public int Pulls = 0;
         public float SoftPity = 0.0f;

@@ -9,6 +9,7 @@ namespace Selivura.DemoClicker
         [SerializeField] private InventoryService _inventoryService;
         [SerializeField] private PlayerStatsService _playerStatsService;
         [SerializeField] private LevelingService _levelingService;
+        [SerializeField] private GachaService _gachaService;
 
         public override void InstallBindings()
         {
@@ -17,6 +18,7 @@ namespace Selivura.DemoClicker
             Container.Bind<InventoryService>().FromInstance(_inventoryService);
             Container.Bind<PlayerStatsService>().FromInstance(_playerStatsService);
             Container.Bind<LevelingService>().FromInstance(_levelingService);
+            Container.Bind<GachaService>().FromInstance(_gachaService);
         }
     }
 

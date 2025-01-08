@@ -52,7 +52,7 @@ namespace Selivura.DemoClicker
         {
 
         }
-        public void IncreaseStack(int amount)
+        public void ChangeStack(int amount)
         {
             stack += amount;
             OnStateChanged.OnNext(this);

@@ -9,11 +9,15 @@ namespace Selivura.DemoClicker
     {
         [SerializeField] private ItemViewModel _itemViewPrefab;
         [SerializeField] private ItemViewModel _fullDisplayViewModel;
+        [SerializeField] private Item _nothingSelectedItem;
         [SerializeField] private Transform _container;
         private List<ItemViewModel> _spawned = new();
 
         private CompositeDisposable _spawnedDisposable = new();
-        
+        private void Start()
+        {
+            _fullDisplayViewModel.SetDisplayItem(_nothingSelectedItem);
+        }
         protected override void OnInventoryUpdated(List<Item> items)
         {
             foreach (var spawnedVM in _spawned)

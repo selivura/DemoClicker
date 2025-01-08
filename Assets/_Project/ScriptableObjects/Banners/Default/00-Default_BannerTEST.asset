@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd047be128b4cba48a176a59fccc6343, type: 3}
-  m_Name: 00-Default_Banner
+  m_Name: 00-Default_BannerTEST
   m_EditorClassIdentifier: 
-  _icon: {fileID: -5396196833375394948, guid: 31df8d6c6ecc98a46b8fe36a8d7056bd, type: 3}
+  _icon: {fileID: -2278566297644842510, guid: 660a1d47139278b46a0609dc161eb0c0, type: 3}
   _bannerGraphicsPrefab: {fileID: 196888581106676516, guid: 443e402bea85b554ebb10d025252013e, type: 3}
   _name: Default banner
   _description: LETS GO GAMBLING
   _ID: gacha_banner_default
   _key:
-    _item: {fileID: 4571904656985921601, guid: 956c099fed36ed34186a090a044f0682, type: 3}
-    _price: 1
+    _item: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
+    _price: 160
   _softPityResetMinimalQuality: 2
   _softPityPerPull: 0.1
   _hardPityRequirements:
