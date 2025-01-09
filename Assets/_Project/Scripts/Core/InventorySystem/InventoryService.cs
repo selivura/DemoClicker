@@ -13,6 +13,7 @@ namespace Selivura.DemoClicker
         private readonly List<Item> _items = new();
 
         public Subject<Item> OnItemAdded = new();
+        public Subject<Item> OnItemRemoved = new();
         public Subject<Unit> OnInventoryChanged = new();
 
 #if UNITY_EDITOR
@@ -27,8 +28,20 @@ namespace Selivura.DemoClicker
             }
         }
 #endif
-        public void GiveItem(Item itemPrefab, int amount)
+        public bool CanAfford(ItemPrice itemPrice, int amount = 1)
         {
+            if (!HasItem(itemPrice.Item, out Item found))
+                return false;
+            if (found.Stack < itemPrice.Price * amount)
+                return false;
+            return true;
+        }
+        public bool GiveItem(Item itemPrefab, int amount)
+        {
+            if(amount < 0)
+            {
+                return RemoveItem(itemPrefab, -amount);
+            }
             Item item = _items.Find(delegate (Item compareItem) { return itemPrefab.ID == compareItem.ID; });
             if(item != null)
             {
@@ -42,6 +55,7 @@ namespace Selivura.DemoClicker
             }
             OnItemAdded.OnNext(item);
             OnInventoryChanged.OnNext(Unit.Default);
+            return true;
         }
         public bool HasItem(Item item)
         {
@@ -58,12 +72,16 @@ namespace Selivura.DemoClicker
         }
         public bool RemoveItem(Item item, int amount = 1)
         {
+            if(amount < 0)
+            {
+                return GiveItem(item, -amount);
+            }
             var found = FindItemByID(item.ID);
             if (found == null)
             {
                 return false;
             }
-            if(found.Stack > amount + 1)
+            if(found.Stack > amount)
             {
                 found.ChangeStack(-amount);
             }
@@ -71,7 +89,9 @@ namespace Selivura.DemoClicker
             {
                 Destroy(found.gameObject);
                 _items.Remove(found);
+                OnItemRemoved.OnNext(found);
             }
+            OnInventoryChanged.OnNext(Unit.Default);
             return true;
         }
         public void GiveItem(ItemDrop itemDrop)

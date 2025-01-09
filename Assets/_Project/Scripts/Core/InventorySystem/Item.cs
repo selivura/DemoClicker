@@ -31,8 +31,6 @@ namespace Selivura.DemoClicker
 
         public ItemQuality Quality => _quality;
         [SerializeField] private ItemQuality _quality;
-        public int Price => price;
-        [SerializeField] protected int price = 0;
 
         public int Stack => stack;
         protected int stack = 0;

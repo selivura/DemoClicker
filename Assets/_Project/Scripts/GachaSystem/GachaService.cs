@@ -16,6 +16,18 @@ namespace Selivura.DemoClicker
 
         public Subject<List<GachaBannerHolder>> OnBannersUpdated = new();
 
+        [Tooltip("Editor only check to call OnBannersUpdated")]
+        [SerializeField] private bool _updateBannersNow = false;
+
+        private void Update()
+        {
+            if(_updateBannersNow)
+            {
+                _updateBannersNow = false;
+                UpdateBannerHolders();
+            }
+        }
+
         private void Awake()
         {
             UpdateBannerHolders();
@@ -27,6 +39,7 @@ namespace Selivura.DemoClicker
         }
         private void UpdateBannerHolders()
         {
+            CurrentHolders.Clear();
             foreach (var banner in _currentBanners)
             {
                 CurrentHolders.Add(new GachaBannerHolder(new(), banner, _inventoryService));

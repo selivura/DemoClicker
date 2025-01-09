@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 8229559993019318902, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
     - target: {fileID: 2629071799706633279, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
       propertyPath: m_Name
-      value: Inventory Variant
+      value: BottomPanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 4990694343580446731, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
       propertyPath: m_Pivot.x
@@ -170,34 +170,6 @@ PrefabInstance:
     - target: {fileID: 4990694343580446731, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8214912380765080608, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
-      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8214912380765080608, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
-      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8214912380765080608, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
-      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8214912380765080608, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
-      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 8214912380765080608, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
-      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Selivura.DemoClicker.UI.ScreenSwitcher, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8214912380765080608, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
-      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8214912380765080608, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
-      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8846576605165687187, guid: 741da42f95c8dfb4fb3fe03bc62b99a1, type: 3}
       propertyPath: m_text

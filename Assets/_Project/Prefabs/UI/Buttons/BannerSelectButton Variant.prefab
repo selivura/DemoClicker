@@ -141,4 +141,5 @@ MonoBehaviour:
   OnButtonClick:
     m_PersistentCalls:
       m_Calls: []
+  BannerIcon: {fileID: 5813625287640631186}
   _bannerIcon: {fileID: 5813625287640631186}

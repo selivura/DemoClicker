@@ -27,9 +27,7 @@ namespace Selivura.DemoClicker
         public bool CanPull(int amount)
         {
             ItemPrice itemPrice = _banner.Key;
-            if (!_inventoryService.HasItem(itemPrice.Item, out Item found))
-                return false;
-            if (found.Stack < itemPrice.Price * amount)
+            if (!_inventoryService.CanAfford(itemPrice,amount))
                 return false;
             return true;
         }
