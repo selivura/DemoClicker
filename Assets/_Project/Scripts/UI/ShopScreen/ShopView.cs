@@ -1,7 +1,6 @@
 using R3;
 using Selivura.DemoClicker.UI;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Selivura.DemoClicker
@@ -18,11 +17,6 @@ namespace Selivura.DemoClicker
 
         [SerializeField] private Item _nothingSelectedItem;
 
-        [Tooltip("Pallete that will be used to set color of quality icon. Must have colors for all qualities.")]
-        [SerializeField] protected UIColorPalette colorPalette;
-
-        [Tooltip("Sprites that will be used to set sprite of quality icon. Must have sprites for all qualities.")]
-        [SerializeField] protected List<Sprite> qualitySprites = new();
 
         private CompositeDisposable _disposable = new();
         private void Start()
@@ -43,7 +37,7 @@ namespace Selivura.DemoClicker
                 var spawnedSlot = Instantiate(_shopLotViewPrefab, _container);
 
                 spawnedSlot.TextWithIcon.Text.text = "x" + lot.Price.Price;
-                spawnedSlot.TextWithIcon.Image.sprite = lot.Price.Item.Icon;
+                spawnedSlot.TextWithIcon.IconImage.sprite = lot.Price.Item.Icon;
                 spawnedSlot.IconImage.sprite = lot.ItemForSale.Icon;
 
                 spawnedSlot.Button.OnButtonClick.AddListener(() => _viewModel.SelectLot(lot));
@@ -57,25 +51,20 @@ namespace Selivura.DemoClicker
             _bigInfoPanel.DescText.text = item.Description;
             _bigInfoPanel.Icon.sprite = item.Icon;
 
-            _bigInfoPanel.Quality.sprite = qualitySprites[(int)item.Quality];
-            _bigInfoPanel.Quality.color = colorPalette.Colors[(int)item.Quality];
+            _bigInfoPanel.SetQuality(item.Quality);
 
             _bigInfoPanel.AmountText.text = "x" + lot.AmountForSale;
             _itemCostButton.ButtonComponent.interactable = true;
         }
         private void ClearItemPanel()
         {
-            _bigInfoPanel.NameText.text = "???";
-            _bigInfoPanel.DescText.text = "???";
+            _bigInfoPanel.ClearPanel();
 
-            _bigInfoPanel.AmountText.text = "x???";
-
-            _itemCostButton.TextWithIcon.Text.text = "x???";
-            _itemCostButton.ButtonComponent.interactable = false;
+            _itemCostButton.TextWithIcon.Clear();
         }
         private void OnLotSelected(ShopLot lot)
         {
-            _itemCostButton.TextWithIcon.Image.sprite = lot.Price.Item.Icon;
+            _itemCostButton.TextWithIcon.IconImage.sprite = lot.Price.Item.Icon;
             _itemCostButton.TextWithIcon.Text.text = "x" + lot.Price.Price;
             UpdateItemPanel(lot);
         }

@@ -14,11 +14,6 @@ namespace Selivura.DemoClicker
 
         private CompositeDisposable _spawnedDisposable = new();
 
-        [Tooltip("Pallete that will be used to set color of quality icon. Must have colors for all qualities.")]
-        [SerializeField] protected UIColorPalette colorPalette;
-
-        [Tooltip("Sprites that will be used to set sprite of quality icon. Must have sprites for all qualities.")]
-        [SerializeField] protected List<Sprite> qualitySprites = new();
         private void Start()
         {
             ClearItemPanel();
@@ -47,17 +42,13 @@ namespace Selivura.DemoClicker
             _bigInfoPanel.DescText.text = item.Description;
             _bigInfoPanel.Icon.sprite = item.Icon;
 
-            _bigInfoPanel.Quality.sprite = qualitySprites[(int)item.Quality];
-            _bigInfoPanel.Quality.color = colorPalette.Colors[(int)item.Quality];
+            _bigInfoPanel.SetQuality(item.Quality);
 
             _bigInfoPanel.AmountText.text = "x" + item.Stack;
         }
         private void ClearItemPanel()
         {
-            _bigInfoPanel.NameText.text = "???";
-            _bigInfoPanel.DescText.text = "???";
-
-            _bigInfoPanel.AmountText.text = "x???";
+            _bigInfoPanel.ClearPanel();
         }
         private void OnDestroy()
         {

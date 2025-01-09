@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 namespace Selivura.DemoClicker.UI
 {
@@ -13,11 +14,30 @@ namespace Selivura.DemoClicker.UI
         [SerializeField] private TMP_Text _amountText;
         [SerializeField] private TMP_Text _descText;
 
-        public Image Frame  => _frame; 
-        public Image Icon => _icon; 
+        [SerializeField] private UITheme _uiTheme;
+
+        public Image Frame => _frame;
+        public Image Icon => _icon;
         public Image Quality => _quality;
         public TMP_Text NameText => _nameText;
         public TMP_Text AmountText => _amountText;
         public TMP_Text DescText => _descText;
+
+        public void ClearPanel()
+        {
+            NameText.text = "???";
+            DescText.text = "???";
+            AmountText.text = "x???";
+
+            Icon.sprite = _uiTheme.PlaceholderIcon;
+            Quality.sprite = _uiTheme.PlaceholderIcon;
+            Quality.color = _uiTheme.QualityPalette.Colors[0];
+        }
+
+        public void SetQuality(ItemQuality quality)
+        {
+            Quality.sprite = _uiTheme.QualityIcons[(int)quality];
+            Quality.color = _uiTheme.QualityPalette.Colors[(int)quality];
+        }
     }
 }

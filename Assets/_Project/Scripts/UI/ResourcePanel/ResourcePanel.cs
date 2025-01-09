@@ -37,7 +37,7 @@ namespace Selivura.DemoClicker.UI
         }
         private void SetTextWithIconToSearchItem()
         {
-            _textWithIcon.Image.sprite = _itemToSearch.Icon;
+            _textWithIcon.IconImage.sprite = _itemToSearch.Icon;
             _textWithIcon.Text.text = 0.ToString();
         }
         private void OnItemRemoved(Item item)
@@ -63,7 +63,7 @@ namespace Selivura.DemoClicker.UI
         }
         private void UpdateTextWithIcon(Item item)
         {
-            _textWithIcon.Image.sprite = item.Icon;
+            _textWithIcon.IconImage.sprite = item.Icon;
             _textWithIcon.Text.text = item.Stack.ToString();
         }
         private void OnDestroy()

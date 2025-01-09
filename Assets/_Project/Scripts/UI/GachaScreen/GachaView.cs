@@ -62,7 +62,7 @@ namespace Selivura.DemoClicker
         }
         private void SetupButton(TextWithIconButton button, int pullAmount)
         {
-            button.TextWithIcon.Image.sprite = _currentHolder.Banner.Key.Item.Icon;
+            button.TextWithIcon.IconImage.sprite = _currentHolder.Banner.Key.Item.Icon;
             button.TextWithIcon.Text.text = "x" + _currentHolder.Banner.Key.Price * pullAmount;
         }
         private void OnDestroy()

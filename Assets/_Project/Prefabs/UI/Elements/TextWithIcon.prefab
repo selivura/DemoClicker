@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c0e44cfe838f041b866961c849a8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uiTheme: {fileID: 11400000, guid: 99a1c9afb082d43408b9125839323697, type: 2}
   _iconImage: {fileID: 6429254400411025498}
   _tmp: {fileID: 8861920384925019854}
 --- !u!1 &5202079424156652748
@@ -253,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4859471314960018970, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+  m_Sprite: {fileID: 4183540580942552177, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

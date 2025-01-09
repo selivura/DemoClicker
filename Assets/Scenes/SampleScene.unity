@@ -656,13 +656,7 @@ MonoBehaviour:
   _shopLotViewPrefab: {fileID: 273280900210316151, guid: ce6e1e38f65ae2c428c653163e7aff31, type: 3}
   _container: {fileID: 19022661}
   _nothingSelectedItem: {fileID: 6453859329492924474, guid: eb047da8a2e7a4547b4fb6f6a1231f1f, type: 3}
-  colorPalette: {fileID: 11400000, guid: 411a7da5afbd2064bb3fba6c6586741e, type: 2}
-  qualitySprites:
-  - {fileID: 5959840405070563567, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: 8613335796162151530, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: -640307845590965810, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: -4303360616918260008, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: 6865531065970919634, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+  _uiTheme: {fileID: 11400000, guid: 99a1c9afb082d43408b9125839323697, type: 2}
 --- !u!114 &261750372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,13 +1252,7 @@ MonoBehaviour:
   _itemFramePrefab: {fileID: 6369326609288007694, guid: f866ea3493b33684b8dc2fe2a1fd54d6, type: 3}
   _bigInfoPanel: {fileID: 8588123267306365238}
   _container: {fileID: 1113169705}
-  colorPalette: {fileID: 11400000, guid: 411a7da5afbd2064bb3fba6c6586741e, type: 2}
-  qualitySprites:
-  - {fileID: 5959840405070563567, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: 8613335796162151530, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: -640307845590965810, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: -4303360616918260008, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
-  - {fileID: 6865531065970919634, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+  _uiTheme: {fileID: 11400000, guid: 99a1c9afb082d43408b9125839323697, type: 2}
 --- !u!114 &466779836
 MonoBehaviour:
   m_ObjectHideFlags: 0

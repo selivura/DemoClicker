@@ -334,6 +334,7 @@ MonoBehaviour:
   _nameText: {fileID: 7297724955250283492}
   _amountText: {fileID: 1541540498551987392}
   _descText: {fileID: 8467921655425852691}
+  _uiTheme: {fileID: 11400000, guid: 99a1c9afb082d43408b9125839323697, type: 2}
 --- !u!1 &4238938716561559883
 GameObject:
   m_ObjectHideFlags: 0
