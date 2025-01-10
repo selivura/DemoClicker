@@ -54,7 +54,6 @@ namespace Selivura.DemoClicker
             _bigInfoPanel.SetQuality(item.Quality);
 
             _bigInfoPanel.AmountText.text = "x" + lot.AmountForSale;
-            _itemCostButton.ButtonComponent.interactable = true;
         }
         private void ClearItemPanel()
         {
@@ -66,6 +65,7 @@ namespace Selivura.DemoClicker
         {
             _itemCostButton.TextWithIcon.IconImage.sprite = lot.Price.Item.Icon;
             _itemCostButton.TextWithIcon.Text.text = "x" + lot.Price.Price;
+            _itemCostButton.ButtonComponent.interactable = _viewModel.CanAffordSelectedLot();
             UpdateItemPanel(lot);
         }
         private void OnDestroy()

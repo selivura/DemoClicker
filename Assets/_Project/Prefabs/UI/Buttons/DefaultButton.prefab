@@ -134,6 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffbb3e895b5428549a4887cd08010718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _punchScale: 0.25
+  _punchDuration: 0.1
+  _punchVibrato: 5
+  _punchElasticity: 1
   OnButtonClick:
     m_PersistentCalls:
       m_Calls: []

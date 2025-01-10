@@ -8,6 +8,7 @@ namespace Selivura.DemoClicker
     public class ShopViewModel : MonoBehaviour
     {
         [Inject] ShopService _shopService;
+        [Inject] InventoryService _inventoryService;
 
         private ShopLot _selectedLot;
         public Subject<List<ShopLot>> OnItemsChanged = new();
@@ -23,6 +24,10 @@ namespace Selivura.DemoClicker
         {
             _selectedLot = lot;
             OnSelectedLotChanged.OnNext(_selectedLot);
+        }
+        public bool CanAffordSelectedLot(int amount = 1)
+        {
+            return _inventoryService.CanAfford(_selectedLot.Price, amount);
         }
         private void OnDestroy()
         {

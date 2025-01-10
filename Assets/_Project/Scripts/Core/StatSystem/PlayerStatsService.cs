@@ -5,9 +5,7 @@ namespace Selivura
 {
     public enum StatType
     {
-        ExpPerClick,
-        CoinChance,
-        CoinAmount,
+        CoinPerClick,
     }
     public enum AmplifyType
     {

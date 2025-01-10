@@ -11,6 +11,7 @@ namespace Selivura.DemoClicker
 
         [SerializeField] GachaViewModel _viewModel;
         [SerializeField] Transform _bannerFrame;
+
         [SerializeField] private TextWithIconButton _x1Button;
         [SerializeField] private TextWithIconButton _x10Button;
 
@@ -31,25 +32,34 @@ namespace Selivura.DemoClicker
                 
                 button.BannerIcon.sprite = banners[i].Banner.Icon;
 
-                //if I remove index and use i instaed it will always set to banners.Count for some reason
+                //if I remove index and use i instaed, it will always set to banners.Count for some reason
                 int index = i;
                 button.OnButtonClick.AddListener(() => _viewModel.SelectBannerHolder(index)); 
             }
         }
         private void Awake()
         {
-            _viewModel.OnGachaInstanceChanged.Subscribe(OnBannerChanged).AddTo(_disposable);
+            _viewModel.OnBannerHolderChanged.Subscribe(OnBannerChanged).AddTo(_disposable);
             _viewModel.OnBannersUpdated.Subscribe(OnBannersUpdated).AddTo(_disposable);
+            _viewModel.OnInventoryUpdated.Subscribe(_ => UpdateButtons()).AddTo(_disposable);
+
             _x1Button.OnButtonClick.AsObservable().Subscribe(_ => OnX1ButtonClicked()).AddTo(_disposable);
             _x10Button.OnButtonClick.AsObservable().Subscribe(_ => OnX10ButtonClicked()).AddTo(_disposable);
         }
+        private void UpdateButtons()
+        {
+            UpdateButton(_x1Button, 1);
+            UpdateButton(_x10Button, 10);
+        }
         private void OnX1ButtonClicked()
         {
-            _currentHolder.Pull();
+            _currentHolder.Pull(); 
+            UpdateButton(_x1Button, 1);
         }
         private void OnX10ButtonClicked()
         {
             _currentHolder.Pull(10);
+            UpdateButton(_x10Button, 10);
         }
         private void OnBannerChanged(GachaBannerHolder holder)
         {
@@ -57,13 +67,13 @@ namespace Selivura.DemoClicker
             _currentHolder = holder;
             _spawnedGachaBanner = Instantiate(_currentHolder.Banner.BannerGraphicsPrefab, _bannerFrame);
 
-            SetupButton(_x1Button, 1); 
-            SetupButton(_x10Button, 10);
+            UpdateButtons();
         }
-        private void SetupButton(TextWithIconButton button, int pullAmount)
+        private void UpdateButton(TextWithIconButton button, int pullAmount)
         {
             button.TextWithIcon.IconImage.sprite = _currentHolder.Banner.Key.Item.Icon;
             button.TextWithIcon.Text.text = "x" + _currentHolder.Banner.Key.Price * pullAmount;
+            button.ButtonComponent.interactable = _currentHolder.CanPull(pullAmount);
         }
         private void OnDestroy()
         {

@@ -8,21 +8,25 @@ namespace Selivura.DemoClicker.UI
     public class GachaViewModel : MonoBehaviour
     {
         [Inject] GachaService _gachaService;
-        GachaBannerHolder _currentGachaInstance;
+        [Inject] InventoryService _inventoryService;
 
-        public Subject<GachaBannerHolder> OnGachaInstanceChanged = new();
+        GachaBannerHolder _currentBannerHolder;
+
+        public Subject<GachaBannerHolder> OnBannerHolderChanged = new();
         public Subject<List<GachaBannerHolder>> OnBannersUpdated = new();
+        public Subject<Unit> OnInventoryUpdated = new();
 
         private CompositeDisposable _disposable = new();
         private void Start()
         {
             SelectBannerHolder(0);
+            _inventoryService.OnInventoryChanged.Subscribe(_ => OnInventoryUpdated.OnNext(Unit.Default)).AddTo(_disposable);
             OnBannersUpdated.OnNext(_gachaService.CurrentHolders);
         }
         public void SelectBannerHolder(int index)
         {
-            _currentGachaInstance = _gachaService.CurrentHolders[index];
-            OnGachaInstanceChanged.OnNext(_currentGachaInstance);
+            _currentBannerHolder = _gachaService.CurrentHolders[index];
+            OnBannerHolderChanged.OnNext(_currentBannerHolder);
 
             _gachaService.OnBannersUpdated.Subscribe(OnBannersUpdated.OnNext).AddTo(_disposable);
         }
