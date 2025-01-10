@@ -1,3 +1,4 @@
+using R3;
 using UnityEngine;
 
 namespace Selivura.DemoClicker
@@ -5,12 +6,14 @@ namespace Selivura.DemoClicker
     public class GachaBannerHolder
     {
         public BannerPullData BannerPullData => _currentPullData;
-        [SerializeField] BannerPullData _currentPullData = new();
+        BannerPullData _currentPullData = new();
 
         public GachaBanner Banner => _banner;
-        [SerializeField] GachaBanner _banner;
+        GachaBanner _banner;
 
         InventoryService _inventoryService;
+
+        public Subject<Unit> OnPull = new();
 
         public GachaBannerHolder(BannerPullData pullData, GachaBanner banner, InventoryService inventoryService)
         {
@@ -41,6 +44,7 @@ namespace Selivura.DemoClicker
                 _inventoryService.GiveItem(drop);
                 _inventoryService.RemoveItem(_banner.Key.Item, _banner.Key.Price);
             }
+            OnPull.OnNext(Unit.Default);
         }
     }
 }

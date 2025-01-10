@@ -16,22 +16,21 @@ MonoBehaviour:
   _bannerGraphicsPrefab: {fileID: 196888581106676516, guid: 443e402bea85b554ebb10d025252013e, type: 3}
   _name: Default banner
   _description: LETS GO GAMBLING
-  _ID: gacha_banner_default
+  _ID: 86f02c99-7fd4-416d-b64f-63ecea2263f9
   _key:
     _item: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
     _price: 160
   _softPityResetMinimalQuality: 2
   _softPityPerPull: 0.1
   _hardPityRequirements:
-    _serializedList:
-    - Key: 1
-      Value: 10
-    - Key: 2
-      Value: 50
-    - Key: 3
-      Value: 70
-    - Key: 4
-      Value: 100
+  - Quality: 1
+    AmountOfPulls: 20
+  - Quality: 2
+    AmountOfPulls: 60
+  - Quality: 3
+    AmountOfPulls: 80
+  - Quality: 4
+    AmountOfPulls: 100
   _tierChances: {fileID: 11400000, guid: c424aa35ed4a27c4f80fb01a29935c22, type: 2}
   _bannerDrops:
     _serializedList:

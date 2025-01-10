@@ -1,51 +1,80 @@
 using R3;
+using Selivura.DemoClicker.Persistence;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 namespace Selivura.DemoClicker
 {
-    public class GachaService : MonoBehaviour
+    public class GachaService : MonoBehaviour, ISaveable<List<BannerSaveData>>
     {
         [Inject] InventoryService _inventoryService;
+        [Inject] DataSavingService _dataSavingService;
 
-        public List<GachaBanner> CurrentBanners => _currentBanners;
-        [SerializeField] private List<GachaBanner> _currentBanners = new();
+        [SerializeField] List<GachaBanner> _starterBanners= new();
+
+        public List<GachaBanner> CurrentBanners { get; private set; } = new();
 
         public List<GachaBannerHolder> CurrentHolders { get; private set; } = new();
 
         public Subject<List<GachaBannerHolder>> OnBannersUpdated = new();
 
-        [Tooltip("Editor only check to call OnBannersUpdated")]
-        [SerializeField] private bool _updateBannersNow = false;
+        public Subject<GachaBannerHolder> OnBannerAdded = new();
 
-        private void Update()
+        private List<BannerSaveData> _saveData = new();
+
+        CompositeDisposable _disposable = new();
+        private void Start()
         {
-            if(_updateBannersNow)
+            foreach (var banner in _starterBanners)
             {
-                _updateBannersNow = false;
-                UpdateBannerHolders();
+                AddBanner(banner);
             }
-        }
-
-        private void Awake()
-        {
-            UpdateBannerHolders();
         }
         public void AddBanner(GachaBanner banner)
         {
-            _currentBanners.Add(banner);
-            UpdateBannerHolders();
-        }
-        private void UpdateBannerHolders()
-        {
-            CurrentHolders.Clear();
-            foreach (var banner in _currentBanners)
+            CurrentBanners.Add(banner);
+            var savedBannerData = FindBannerSaveByID(banner.ID);
+
+            GachaBannerHolder holder = new(new(), banner, _inventoryService);
+            if(savedBannerData != null)
             {
-                CurrentHolders.Add(new GachaBannerHolder(new(), banner, _inventoryService));
+                if (savedBannerData.BannerID == banner.ID)
+                {
+                    holder = new(savedBannerData.PullData, banner, _inventoryService);
+                }
             }
+
+            CurrentHolders.Add(holder);
             OnBannersUpdated.OnNext(CurrentHolders);
         }
+        private void OnDestroy()
+        {
+            _disposable.Dispose();
+        }
 
+        public List<BannerSaveData> CaptureState()
+        {
+            _saveData.Clear();
+            foreach (var holders in CurrentHolders)
+            {
+                _saveData.Add(new(holders.Banner.ID, holders.BannerPullData));
+            }
+            return _saveData;
+        }
+
+        public void RestoreState(List<BannerSaveData> state)
+        {
+            _saveData.Clear();
+            foreach (var item in state)
+            {
+                _saveData.Add(item);
+            }
+        }
+
+        public BannerSaveData FindBannerSaveByID(string ID)
+        {
+            return _saveData.Find((data) => { return data.BannerID == ID; });
+        }
     }
 }

@@ -933,10 +933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d074ac9bede5bb941ae747aa810d537c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentBanners:
+  _starterBanners:
   - {fileID: 11400000, guid: 83e42ae9ae0ce7e4d9b3ed2922e5b89f, type: 2}
   - {fileID: 11400000, guid: ffe8332fdd7b7b64096238deb19264a4, type: 2}
-  _updateBannersNow: 0
 --- !u!1 &458856845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1303,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1505,6 +1504,7 @@ Transform:
   - {fileID: 174218715}
   - {fileID: 302339594}
   - {fileID: 1784917301}
+  - {fileID: 700870543}
   m_Father: {fileID: 619185514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613593087
@@ -1661,6 +1661,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 704194355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &700870542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700870543}
+  - component: {fileID: 700870544}
+  m_Layer: 0
+  m_Name: DataSavingService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700870543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700870542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 602336192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &700870544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700870542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c5c34cd0771914fae7ce751e59b7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveName: Save
+  GameData:
+    Name: Save
 --- !u!1 &704194354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,6 +2701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f314dda5a9429b845be8b918ddaecf24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameItemList: {fileID: 11400000, guid: ce61b703bbbbc6041bcd0a1988c71112, type: 2}
   _giveItem: {fileID: 0}
   _giveAmount: 0
 --- !u!1 &1214511531
@@ -4500,7 +4548,7 @@ MonoBehaviour:
   _clickerService: {fileID: 1849266680}
   _inventoryService: {fileID: 1213723384}
   _playerStatsService: {fileID: 174218716}
-  _levelingService: {fileID: 0}
+  _dataSavingService: {fileID: 700870544}
   _gachaService: {fileID: 302339595}
   _shopService: {fileID: 1784917302}
 --- !u!114 &1913197462

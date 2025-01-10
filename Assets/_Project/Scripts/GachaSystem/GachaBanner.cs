@@ -1,4 +1,6 @@
 using AYellowpaper.SerializedCollections;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +24,7 @@ namespace Selivura.DemoClicker
         [SerializeField][TextArea] private string _description; 
         public string ID => _ID;
 
-        [SerializeField][TextArea] private string _ID = "gacha_banner_default";
+        [SerializeField] private string _ID;
 
         public ItemPrice Key => _key;
         [SerializeField] ItemPrice _key;
@@ -35,9 +37,8 @@ namespace Selivura.DemoClicker
         public float SoftPityPerPull => _softPityPerPull;
         [SerializeField] private float _softPityPerPull = 0.1f;
 
-        public Dictionary<ItemQuality, int> HardPityRequirements => _hardPityRequirements;
-        [SerializedDictionary("Tier", "Guranteed amount of pulls")]
-        [SerializeField] SerializedDictionary<ItemQuality, int> _hardPityRequirements = new();
+        public List<HardPity> HardPityRequirements => _hardPityRequirements;
+        [SerializeField] List<HardPity> _hardPityRequirements = new();
 
         [Header("Drops")]
 
@@ -52,7 +53,7 @@ namespace Selivura.DemoClicker
         {
             data.Pulls++;
 
-            if(data.HardPity == null)
+            if(data.CurrentHardPity == null || data.CurrentHardPity.Count == 0)
             {
                 data.CreateHardPity(this);
             }
@@ -63,12 +64,12 @@ namespace Selivura.DemoClicker
 
             ItemQuality minimumQuality = ItemQuality.B;
 
-            foreach (var keyValuePair in _hardPityRequirements)
+            foreach (var requirement in _hardPityRequirements)
             {
-                int current = data.HardPity[keyValuePair.Key];
-                if (keyValuePair.Value <= current)
+                int currentAmount = HardPity.FindHardPityByQuality(data.CurrentHardPity, requirement.Quality).AmountOfPulls;
+                if (requirement.AmountOfPulls <= currentAmount)
                 {
-                    minimumQuality = keyValuePair.Key;
+                    minimumQuality = requirement.Quality;
                 }
             }
 
@@ -95,64 +96,95 @@ namespace Selivura.DemoClicker
             Debug.Log($"You pulled [{dropTier}] {gachaDrop.Item.Name} x {gachaDrop.Amount}");
             Debug.Log($"---BANNER STATS---");
             Debug.Log($"Soft pity: {data.SoftPity}");
-            foreach (var item in data.HardPity)
+            foreach (var item in data.CurrentHardPity)
             {
-                Debug.Log($"[{item.Key}] pity: {item.Value}");
+                Debug.Log($"[{item.Quality}] Hard pity: {item.AmountOfPulls}");
             }
             return gachaDrop;
         }
+
+        [ContextMenu("Generate ID")]
+        private void GenerateID()
+        {
+            _ID = Guid.NewGuid().ToString();
+        }
+        private void Awake()
+        {
+            GenerateID();
+        }
     }
-    public class GachaDrop : ItemDrop
+    [Serializable]
+    public class BannerSaveData
     {
-        public ItemQuality DropQuality => _quality;
-        [SerializeField] private ItemQuality _quality;
-        public GachaDrop()
+        public readonly string BannerID;
+        public readonly BannerPullData PullData;
+
+        public BannerSaveData(string bannerID, BannerPullData pullData)
+        {
+            BannerID = bannerID;
+            PullData = pullData;
+        }
+    }
+    [Serializable]
+    public class HardPity
+    {
+        public ItemQuality Quality;
+
+        public int AmountOfPulls;
+
+        public HardPity()
         {
 
         }
-        public GachaDrop(ItemQuality quality, Item item, int amount) : base(item, amount)
+        public HardPity(ItemQuality quality, int amountOfPulls)
         {
-            _quality = quality;
-            this.item = item;
-            this.amount = amount;
+            Quality = quality;
+            AmountOfPulls = amountOfPulls;
+        }
+
+        public static HardPity FindHardPityByQuality(List<HardPity> list, ItemQuality droppedQuality)
+        {
+            return list.Find((hardPity) => { return hardPity.Quality == droppedQuality; });
+        }
+        public static bool HasHardPity(List<HardPity> list, ItemQuality droppedQuality)
+        {
+            return FindHardPityByQuality(list, droppedQuality) != null;
         }
     }
-    [System.Serializable]
+    [Serializable]
     public class BannerPullData
     {
         public int Pulls = 0;
         public float SoftPity = 0.0f;
 
-        public Dictionary<ItemQuality, int> HardPity => _hardPity;
+        public List<HardPity> CurrentHardPity => _currentHardPity;
 
-        Dictionary<ItemQuality, int> _hardPity;
-        public Dictionary<ItemQuality, int> CreateHardPity(GachaBanner banner)
+        [SerializeField] List<HardPity> _currentHardPity = new();
+        public List<HardPity> CreateHardPity(GachaBanner banner)
         {
-            _hardPity = new();
+            _currentHardPity = new();
             foreach (var item in banner.HardPityRequirements)
             {
-                _hardPity.Add(item.Key, 0);
+                _currentHardPity.Add(new(item.Quality, 0));
             }
-            return _hardPity;
+            return _currentHardPity;
         }
         public void IncreaseHardPity()
         {
-            Dictionary<ItemQuality, int> modified = new();
-            foreach (var item in _hardPity)
+            foreach (var item in _currentHardPity)
             {
-                modified.Add(item.Key, _hardPity[item.Key] + 1);
+                item.AmountOfPulls++;
             }
-            _hardPity = modified;
         }
         public void ResetHardPity(ItemQuality droppedQuality)
         {
-            if (!_hardPity.ContainsKey(droppedQuality))
+            if (!HardPity.HasHardPity(_currentHardPity, droppedQuality))
                 return;
             for (int i = 0; i <= (int)droppedQuality; i++)
             {
-                if (_hardPity.ContainsKey((ItemQuality)i))
+                if (HardPity.HasHardPity(_currentHardPity, (ItemQuality)i))
                 {
-                    _hardPity[(ItemQuality)i] = 0;
+                    HardPity.FindHardPityByQuality(_currentHardPity, (ItemQuality)i).AmountOfPulls = 0;
                 }
             }
         }

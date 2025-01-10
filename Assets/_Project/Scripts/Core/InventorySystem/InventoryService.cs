@@ -1,14 +1,13 @@
 using R3;
+using Selivura.DemoClicker.Persistence;
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
 namespace Selivura.DemoClicker
 {
-    public class InventoryService : MonoBehaviour
+    public class InventoryService : MonoBehaviour, ISaveable<SavedInventory>
     {
-        [Inject]
-        private PlayerStatsService _statsController;
+        [SerializeField] GameItemsList _gameItemList;
 
         private readonly List<Item> _items = new();
 
@@ -105,6 +104,54 @@ namespace Selivura.DemoClicker
         public List<Item> GetItems()
         {
             return _items;  
+        }
+
+        public SavedInventory CaptureState()
+        {
+            SavedInventory savedInventory = new SavedInventory(new());
+            foreach (var item in _items)
+            {
+                savedInventory.Items.Add(new SavedItem(item.ID, item.Stack));
+            }
+            return savedInventory;
+        }
+
+        public void RestoreState(SavedInventory state)
+        {
+            //for (int i = 0; i < _items.Count; i++)
+            //{
+            //    var item = _items[i];
+            //    RemoveItem(item, item.Stack);
+            //}
+
+            foreach (var savedItem in state.Items)
+            {
+                GiveItem(_gameItemList.Items.Find((foundItem) => { return foundItem.ID == savedItem.ID; }), savedItem.Stack);
+            }
+        }
+
+    }
+    [System.Serializable]
+    public class SavedInventory
+    {
+        public readonly List<SavedItem> Items;
+
+        public SavedInventory(List<SavedItem> items)
+        {
+            Items = items;
+        }
+    }
+
+    [System.Serializable]
+    public class SavedItem
+    {
+        public readonly string ID;
+        public readonly int Stack;
+
+        public SavedItem(string iD, int stack)
+        {
+            ID = iD;
+            Stack = stack;
         }
     }
 }

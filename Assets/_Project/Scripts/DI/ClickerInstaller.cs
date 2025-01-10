@@ -1,3 +1,4 @@
+using Selivura.DemoClicker.Persistence;
 using UnityEngine;
 using Zenject;
 namespace Selivura.DemoClicker
@@ -8,7 +9,7 @@ namespace Selivura.DemoClicker
         [SerializeField] private ClickerService _clickerService;
         [SerializeField] private InventoryService _inventoryService;
         [SerializeField] private PlayerStatsService _playerStatsService;
-        [SerializeField] private LevelingService _levelingService;
+        [SerializeField] private DataSavingService _dataSavingService;
         [SerializeField] private GachaService _gachaService;
         [SerializeField] private ShopService _shopService;
 
@@ -18,7 +19,7 @@ namespace Selivura.DemoClicker
             Container.Bind<ClickerService>().FromInstance(_clickerService);
             Container.Bind<InventoryService>().FromInstance(_inventoryService);
             Container.Bind<PlayerStatsService>().FromInstance(_playerStatsService);
-            Container.Bind<LevelingService>().FromInstance(_levelingService);
+            Container.Bind<DataSavingService>().FromInstance(_dataSavingService);
             Container.Bind<GachaService>().FromInstance(_gachaService);
             Container.Bind<ShopService>().FromInstance(_shopService);
         }

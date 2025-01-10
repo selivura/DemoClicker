@@ -1,4 +1,5 @@
 using R3;
+using System;
 using UnityEngine;
 
 namespace Selivura.DemoClicker
@@ -27,7 +28,8 @@ namespace Selivura.DemoClicker
         [SerializeField] [TextArea] private string _description;
         public string ID => _ID;
 
-        [SerializeField][TextArea] private string _ID = "item_id";
+        [Tooltip("DO NOT CHANGE IT OR SAVE FILES WONT FIND THIS ITEM")]
+        [SerializeField] private string _ID;
 
         public ItemQuality Quality => _quality;
         [SerializeField] private ItemQuality _quality;
@@ -74,6 +76,15 @@ namespace Selivura.DemoClicker
                 default:
                     return "?";
             }
+        }
+        [ContextMenu("Genreate ID")]
+        private void GenerateId()
+        {
+            _ID = Guid.NewGuid().ToString();
+        }
+        private void Reset()
+        {
+            GenerateId();
         }
     }
 }
