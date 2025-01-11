@@ -41,6 +41,7 @@ namespace Selivura.DemoClicker
             _bigInfoPanel.NameText.text = item.Name;
             _bigInfoPanel.DescText.text = item.Description;
             _bigInfoPanel.Icon.sprite = item.Icon;
+            _bigInfoPanel.SplashArt.sprite = item.SplashArt;
 
             _bigInfoPanel.SetQuality(item.Quality);
 

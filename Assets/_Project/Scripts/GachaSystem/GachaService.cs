@@ -24,7 +24,7 @@ namespace Selivura.DemoClicker
         private List<BannerSaveData> _saveData = new();
 
         CompositeDisposable _disposable = new();
-        private void Start()
+        private void Awake()
         {
             foreach (var banner in _starterBanners)
             {

@@ -15,6 +15,8 @@ namespace Selivura.DemoClicker
         [SerializeField] private TextWithIconButton _x1Button;
         [SerializeField] private TextWithIconButton _x10Button;
 
+        [SerializeField] private BannerDropResultsWindow _resultsWindow;
+
         private GameObject _spawnedGachaBanner;
         private CompositeDisposable _disposable = new();
 
@@ -53,12 +55,12 @@ namespace Selivura.DemoClicker
         }
         private void OnX1ButtonClicked()
         {
-            _currentHolder.Pull(); 
+            _resultsWindow.ShowWindow(_currentHolder.Pull()); 
             UpdateButton(_x1Button, 1);
         }
         private void OnX10ButtonClicked()
         {
-            _currentHolder.Pull(10);
+            _resultsWindow.ShowWindow(_currentHolder.Pull(10));
             UpdateButton(_x10Button, 10);
         }
         private void OnBannerChanged(GachaBannerHolder holder)

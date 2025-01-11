@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DefaultTheme
   m_EditorClassIdentifier: 
   _placeholderIcon: {fileID: 4183540580942552177, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+  _placeholderSprite: {fileID: 426500392252362305, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
   _qualityPalette: {fileID: 11400000, guid: 411a7da5afbd2064bb3fba6c6586741e, type: 2}
   _qualityIcons:
   - {fileID: 5959840405070563567, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}

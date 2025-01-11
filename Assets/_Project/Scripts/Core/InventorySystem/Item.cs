@@ -18,8 +18,8 @@ namespace Selivura.DemoClicker
 
         public Sprite Icon => _icon;
         [SerializeField] private Sprite _icon;
-        public Sprite Sprite => _sprite;
-        [SerializeField] private Sprite _sprite;
+        public Sprite SplashArt => _splashArt;
+        [SerializeField] private Sprite _splashArt;
         public string Name => _name; 
         [SerializeField] private string _name;
 

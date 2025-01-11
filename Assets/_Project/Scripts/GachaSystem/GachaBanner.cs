@@ -60,7 +60,7 @@ namespace Selivura.DemoClicker
 
             data.IncreaseHardPity();
 
-            ItemQuality dropTier = _tierChances.GetDrop(default, data.SoftPity);
+            ItemQuality dropTier = _tierChances.GetDrop(1, data.SoftPity);
 
             ItemQuality minimumQuality = ItemQuality.B;
 

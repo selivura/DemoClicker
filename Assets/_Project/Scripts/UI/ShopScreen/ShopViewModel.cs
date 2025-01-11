@@ -18,6 +18,7 @@ namespace Selivura.DemoClicker
         private void Start()
         {
             _shopService.OnItemsChanged.Subscribe((itemLots) => OnItemsChanged.OnNext(itemLots)).AddTo(_disposable);
+            OnItemsChanged.OnNext(_shopService.ItemsForSale);
             //_itemCostButton.SetItemAndCost(new ItemPrice(_nothingSelectedItem, 1));
         }
         public void SelectLot(ShopLot lot)

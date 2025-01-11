@@ -1,4 +1,5 @@
 using R3;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Selivura.DemoClicker
@@ -34,17 +35,18 @@ namespace Selivura.DemoClicker
                 return false;
             return true;
         }
-        public void Pull(int amount = 1)
+        public List<GachaDrop> Pull(int amount = 1)
         {
-            if(!CanPull(amount)) return;
-
+            List<GachaDrop> result = new();
             for (int i = 0; i < amount; i++)
             {
                 GachaDrop drop = _banner.Pull(_currentPullData);
                 _inventoryService.GiveItem(drop);
                 _inventoryService.RemoveItem(_banner.Key.Item, _banner.Key.Price);
+                result.Add(drop);
             }
             OnPull.OnNext(Unit.Default);
+            return result;
         }
     }
 }

@@ -358,7 +358,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 3, y: 3, z: 7, w: 3}
     customData: 
     rect:
       serializedVersion: 2
@@ -572,9 +572,9 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
+      x: 175
       y: 81
-      width: 320
+      width: 149
       height: 38
     spriteID: 8d6ab84b6b0709b4c9722dbc07dfdf89
     spriteBone: []
@@ -694,7 +694,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 2, y: 2, z: 2, w: 2}
     customData: 
     rect:
       serializedVersion: 2
@@ -732,6 +732,48 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
+  - name: placeholderSplash
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 596
+      y: 134
+      width: 48
+      height: 80
+    spriteID: 5b77fcdb49f4e8242bddbc13417482e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: BannersLabel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 10
+      y: 84
+      width: 104
+      height: 29
+    spriteID: e4a6ecf7b4e7fe24fb8288ad2c6e5f5e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
     guid: 516244925
@@ -746,7 +788,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 110
-        width: 582
+        width: 640
         height: 210
       spriteId: 09cbf68701ae09f41a00320e5ba591d0
     linkedCells: []

@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace Selivura.DemoClicker.UI
 {
@@ -9,6 +8,7 @@ namespace Selivura.DemoClicker.UI
     {
         [SerializeField] private Image _frame;
         [SerializeField] private Image _icon;
+        [SerializeField] private Image _splashArt;
         [SerializeField] private Image _quality;
         [SerializeField] private TMP_Text _nameText;
         [SerializeField] private TMP_Text _amountText;
@@ -17,6 +17,7 @@ namespace Selivura.DemoClicker.UI
         [SerializeField] private UITheme _uiTheme;
 
         public Image Frame => _frame;
+        public Image SplashArt => _splashArt;
         public Image Icon => _icon;
         public Image Quality => _quality;
         public TMP_Text NameText => _nameText;
@@ -25,19 +26,21 @@ namespace Selivura.DemoClicker.UI
 
         public void ClearPanel()
         {
-            NameText.text = "???";
-            DescText.text = "???";
-            AmountText.text = "x???";
+            _nameText.text = "???";
+           _descText.text = "???";
+            _amountText.text = "x???";
 
-            Icon.sprite = _uiTheme.PlaceholderIcon;
-            Quality.sprite = _uiTheme.PlaceholderIcon;
-            Quality.color = _uiTheme.QualityPalette.Colors[0];
+            _splashArt.sprite = _uiTheme.PlaceholderSprite;
+            _icon.sprite = _uiTheme.PlaceholderIcon;
+
+            _quality.sprite = _uiTheme.PlaceholderIcon;
+            _quality.color = _uiTheme.QualityPalette.Colors[0];
         }
 
         public void SetQuality(ItemQuality quality)
         {
-            Quality.sprite = _uiTheme.QualityIcons[(int)quality];
-            Quality.color = _uiTheme.QualityPalette.Colors[(int)quality];
+            _quality.sprite = _uiTheme.QualityIcons[(int)quality];
+            _quality.color = _uiTheme.QualityPalette.Colors[(int)quality];
         }
     }
 }

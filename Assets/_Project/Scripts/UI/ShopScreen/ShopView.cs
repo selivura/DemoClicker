@@ -15,15 +15,16 @@ namespace Selivura.DemoClicker
 
         [SerializeField] private Transform _container;
 
-        [SerializeField] private Item _nothingSelectedItem;
-
 
         private CompositeDisposable _disposable = new();
-        private void Start()
+        private void Awake()
         {
             _itemCostButton.OnButtonClick.AddListener(_viewModel.BuyCurrentLot);
             _viewModel.OnItemsChanged.Subscribe(OnItemsChanged).AddTo(_disposable);
             _viewModel.OnSelectedLotChanged.Subscribe(OnLotSelected).AddTo(_disposable);
+        }
+        private void Start()
+        {
             ClearItemPanel();
         }
         private void OnItemsChanged(List<ShopLot> itemLots)
@@ -50,6 +51,7 @@ namespace Selivura.DemoClicker
             _bigInfoPanel.NameText.text = item.Name;
             _bigInfoPanel.DescText.text = item.Description;
             _bigInfoPanel.Icon.sprite = item.Icon;
+            _bigInfoPanel.SplashArt.sprite = item.SplashArt;
 
             _bigInfoPanel.SetQuality(item.Quality);
 

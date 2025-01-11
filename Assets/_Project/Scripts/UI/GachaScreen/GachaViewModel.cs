@@ -19,9 +19,9 @@ namespace Selivura.DemoClicker.UI
         private CompositeDisposable _disposable = new();
         private void Start()
         {
-            SelectBannerHolder(0);
             _inventoryService.OnInventoryChanged.Subscribe(_ => OnInventoryUpdated.OnNext(Unit.Default)).AddTo(_disposable);
             OnBannersUpdated.OnNext(_gachaService.CurrentHolders);
+            SelectBannerHolder(0);
         }
         public void SelectBannerHolder(int index)
         {
