@@ -22,6 +22,7 @@ namespace Selivura.DemoClicker
             Container.Bind<DataSavingService>().FromInstance(_dataSavingService);
             Container.Bind<GachaService>().FromInstance(_gachaService);
             Container.Bind<ShopService>().FromInstance(_shopService);
+            //Container.Bind<DiContainer>().FromInstance(Container);
         }
     }
 

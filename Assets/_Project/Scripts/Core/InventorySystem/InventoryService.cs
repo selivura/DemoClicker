@@ -2,12 +2,14 @@ using R3;
 using Selivura.DemoClicker.Persistence;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Selivura.DemoClicker
 {
     public class InventoryService : MonoBehaviour, ISaveable<SavedInventory>
     {
         [SerializeField] GameItemsList _gameItemList;
+        [Inject] DiContainer _diContainer;
 
         private readonly List<Item> _items = new();
 
@@ -48,7 +50,7 @@ namespace Selivura.DemoClicker
             }
             else
             {
-                item = Instantiate(itemPrefab, transform);
+                item = _diContainer.InstantiatePrefab(itemPrefab, transform).GetComponent<Item>();
                 _items.Add(item);
                 item.ChangeStack(amount);
             }

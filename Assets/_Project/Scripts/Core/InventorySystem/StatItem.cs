@@ -10,11 +10,15 @@ namespace Selivura.DemoClicker
         public Dictionary<StatType, StatModifier> Stats => _stats;
 
         [SerializedDictionary("Stat type", "Modifier")]
-        [SerializeField] SerializedDictionary<StatType, StatModifier> _stats => new();
+        [SerializeField] SerializedDictionary<StatType, StatModifier> _stats = new();
 
         [Inject]
         PlayerStatsService _statsService;
-        protected override void OnStackIncreased(int amount)
+        protected override void OnInitialize()
+        {
+            RefreshStats();
+        }
+        protected override void OnStackChanged(int amount)
         {
             RefreshStats();
         }

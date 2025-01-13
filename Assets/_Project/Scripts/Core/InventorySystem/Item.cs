@@ -55,9 +55,10 @@ namespace Selivura.DemoClicker
         public void ChangeStack(int amount)
         {
             stack += amount;
+            OnStackChanged(amount);
             OnStateChanged.OnNext(this);
         }
-        protected virtual void OnStackIncreased(int amount) { }
+        protected virtual void OnStackChanged(int amount) { }
 
         public static string QualityToString(ItemQuality quality)
         {

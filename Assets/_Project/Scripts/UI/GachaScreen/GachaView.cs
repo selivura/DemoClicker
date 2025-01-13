@@ -55,12 +55,14 @@ namespace Selivura.DemoClicker
         }
         private void OnX1ButtonClicked()
         {
-            _resultsWindow.ShowWindow(_currentHolder.Pull()); 
+            _resultsWindow.SetDrop(_currentHolder.Pull());
+            _resultsWindow.ShowWindow(); 
             UpdateButton(_x1Button, 1);
         }
         private void OnX10ButtonClicked()
         {
-            _resultsWindow.ShowWindow(_currentHolder.Pull(10));
+            _resultsWindow.SetDrop(_currentHolder.Pull(10));
+            _resultsWindow.ShowWindow();
             UpdateButton(_x10Button, 10);
         }
         private void OnBannerChanged(GachaBannerHolder holder)

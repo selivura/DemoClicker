@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8526604898034110796, guid: 147450844cf0edc409e83de291b020dd, type: 3}
+      propertyPath: _containerSource
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4273161529948695921, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: m_Name
       value: Coin
@@ -59,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: 3231236242939204343, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+      objectReference: {fileID: 3432651779917119257, guid: c11b6e9c40d332a40a1db032f3e51b7a, type: 3}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _name
       value: Coin

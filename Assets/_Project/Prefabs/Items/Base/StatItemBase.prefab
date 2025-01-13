@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4273161529948695921, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: m_Name
-      value: StatItemBase Variant
+      value: StatItemBase
       objectReference: {fileID: 0}
     - target: {fileID: 5376861234429474648, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -78,7 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200ecb336d05f37428c47f83f367c01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 4183540580942552177, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+  _splashArt: {fileID: 426500392252362305, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
   _name: Stat item base
   _description: Base prefab for all stat items
   _ID: item_stat_base

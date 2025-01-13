@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4273161529948695921, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: m_Name
-      value: UltraRareSSSAnimeGirl Variant
+      value: TheGameAward
       objectReference: {fileID: 0}
     - target: {fileID: 5376861234429474648, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59,10 +59,10 @@ PrefabInstance:
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: 21300000, guid: 04b7844ba6de040e3a9f0081d763c83d, type: 3}
+      objectReference: {fileID: 4117336126075769215, guid: c11b6e9c40d332a40a1db032f3e51b7a, type: 3}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _name
-      value: UltraRareSSSAnimeGirl
+      value: Winner's cup
       objectReference: {fileID: 0}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _quality
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _description
-      value: ULTRA RARE LEGENDARY SSS RANK 5 STAR ANIME GIRL YAAAY
+      value: Buy this item to win the game!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -31,5 +31,9 @@ namespace Selivura.DemoClicker.UI
         {
 
         }
+        private void OnDestroy()
+        {
+            transform.DOKill();
+        }
     }
 }

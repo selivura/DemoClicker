@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Selivura.DemoClicker.Persistence
@@ -6,7 +7,7 @@ namespace Selivura.DemoClicker.Persistence
     public class DataSavingService : MonoBehaviour
     {
         [SerializeField] private string _saveName = "Save";
-        [SerializeField] public GameData GameData;
+        [SerializeField] public GameData GameData = new();
 
         [Inject] InventoryService _inventoryService;
         [Inject] GachaService _gachaService;
@@ -16,12 +17,11 @@ namespace Selivura.DemoClicker.Persistence
         private void Awake()
         {
             _dataService = new FileDataService(new JsonSerializer());
-            LoadGame(_saveName);
+            LoadGame();
         }
 
         public void NewGame()
         {
-            GameData = new GameData { Name = "Save"};
             Debug.Log("New game created");
         }
 
@@ -33,11 +33,11 @@ namespace Selivura.DemoClicker.Persistence
             Debug.Log("Game saved");
         }
 
-        public void LoadGame(string gameName)
+        public void LoadGame()
         {
             try
             {
-                GameData = _dataService.Load(gameName);
+                GameData = _dataService.Load(_saveName);
                 _gachaService.RestoreState(GameData.BannerSaves);
                 _inventoryService.RestoreState(GameData.Inventory);
                 Debug.Log("Game loaded");
@@ -49,14 +49,11 @@ namespace Selivura.DemoClicker.Persistence
             }
         }
 
-        public void DeleteGame(string gameName)
+        public void DeleteGame()
         {
-            _dataService.Delete(gameName);
+            _dataService.Delete(_saveName);
             Debug.Log("Deleted game");
-            if(GameData.Name == gameName)
-            {
-                NewGame();
-            }
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
         //REMOVE THIS
         private void Update()
@@ -71,11 +68,11 @@ namespace Selivura.DemoClicker.Persistence
             }
             if(Input.GetKeyDown(KeyCode.D))
             {
-                DeleteGame(_saveName);
+                DeleteGame();
             }
             if(Input.GetKeyDown(KeyCode.L))
             {
-                LoadGame(_saveName);
+                LoadGame();
             }
         }
 

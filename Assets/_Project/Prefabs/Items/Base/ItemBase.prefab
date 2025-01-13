@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7746950e4f441fa4ca48702a6b2b6b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 4183540580942552177, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
+  _splashArt: {fileID: 426500392252362305, guid: 93150bea63f46704a8f405b85d219ba8, type: 3}
   _name: Item base
   _description: Base prefab for all items
   _ID: item_base

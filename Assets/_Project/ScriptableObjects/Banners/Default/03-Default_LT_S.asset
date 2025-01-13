@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loot:
   - Drop:
-      item: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
-      amount: 500
+      item: {fileID: 4571904656985921601, guid: 956c099fed36ed34186a090a044f0682, type: 3}
+      amount: 5
     Weight: 1
   - Drop:
-      item: {fileID: 4571904656985921601, guid: 956c099fed36ed34186a090a044f0682, type: 3}
-      amount: 2
+      item: {fileID: 8228023819946047994, guid: 9baae2019c0ac1044bbe22b26994797d, type: 3}
+      amount: 1
     Weight: 1

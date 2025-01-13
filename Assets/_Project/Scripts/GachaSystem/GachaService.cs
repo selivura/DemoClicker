@@ -71,7 +71,6 @@ namespace Selivura.DemoClicker
                 _saveData.Add(item);
             }
         }
-
         public BannerSaveData FindBannerSaveByID(string ID)
         {
             return _saveData.Find((data) => { return data.BannerID == ID; });
