@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd047be128b4cba48a176a59fccc6343, type: 3}
   m_Name: 00-Default_Banner
   m_EditorClassIdentifier: 
-  _icon: {fileID: -5396196833375394948, guid: 31df8d6c6ecc98a46b8fe36a8d7056bd, type: 3}
+  _icon: {fileID: 5110337107564267495, guid: 31df8d6c6ecc98a46b8fe36a8d7056bd, type: 3}
   _bannerGraphicsPrefab: {fileID: 196888581106676516, guid: 443e402bea85b554ebb10d025252013e, type: 3}
   _name: Default banner
   _description: LETS GO GAMBLING
-  _ID: c0469807-73d6-4c55-acbb-336796685b7d
+  _ID: 976c2c6d-573c-4159-8c34-becfee849d05
   _key:
     _item: {fileID: 4571904656985921601, guid: 956c099fed36ed34186a090a044f0682, type: 3}
     _price: 1

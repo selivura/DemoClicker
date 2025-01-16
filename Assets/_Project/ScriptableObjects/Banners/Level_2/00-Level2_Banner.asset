@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd047be128b4cba48a176a59fccc6343, type: 3}
   m_Name: 00-Level2_Banner
   m_EditorClassIdentifier: 
-  _icon: {fileID: -5396196833375394948, guid: 31df8d6c6ecc98a46b8fe36a8d7056bd, type: 3}
-  _bannerGraphicsPrefab: {fileID: 196888581106676516, guid: 443e402bea85b554ebb10d025252013e, type: 3}
+  _icon: {fileID: -348807772573576864, guid: 31df8d6c6ecc98a46b8fe36a8d7056bd, type: 3}
+  _bannerGraphicsPrefab: {fileID: 196888581106676516, guid: 30cb3f1278843b44e97c136f57169de8, type: 3}
   _name: Level 2 banner
-  _description: LETS GO GAMBLING
-  _ID: b22226fc-a7b9-48f7-8955-360d480f14c3
+  _description: Better drops!
+  _ID: ef555cb9-a141-479c-a118-34d477e720c3
   _key:
     _item: {fileID: 4571904656985921601, guid: efacb26a453c16c4997c99669c8a3da5, type: 3}
     _price: 1

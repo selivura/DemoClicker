@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 31df8d6c6ecc98a46b8fe36a8d7056bd
+guid: f6b903997bd77f242af0dde7e68c70fe
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,33 +71,33 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638726408975638539
+  platformSettingsDirtyTick: 638726401055613126
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,19 +122,19 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BannerIcons
+  - name: GameIcon
     originalName: 
-    pivot: {x: 0.6666667, y: -15}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 96
-      height: 16
-    spriteID: d4f96dd3f1c05f0429d0c2cfa307288f
+      width: 128
+      height: 128
+    spriteID: 0df5fc15c1c69c04db4b012c573fd517
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,66 +143,24 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  spriteSheetImportData:
-  - name: BannerIcons_0
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 48
-      height: 16
-    spriteID: d998711edcf21fa46bfc7a52a4d8fd7f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: BannerIcons_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 52
-      y: 4
-      width: 48
-      height: 16
-    spriteID: 997d5b6a03f5de4468c6a16670822141
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
+  spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1443068250
-    name: BannerIcons
+    guid: -1328551999
+    name: GameIcon
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: BannerIcons
+    - name: GameIconAse
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 240
-        width: 96
-        height: 16
-      spriteId: d4f96dd3f1c05f0429d0c2cfa307288f
+        y: 0
+        width: 128
+        height: 128
+      spriteId: 0df5fc15c1c69c04db4b012c573fd517
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -224,7 +182,7 @@ ScriptedImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -245,4 +203,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 128, y: 256}
+  canvasSize: {x: 128, y: 128}
