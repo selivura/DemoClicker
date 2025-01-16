@@ -69,6 +69,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
+      propertyPath: _splashArt
+      value: 
+      objectReference: {fileID: -2694577424646612013, guid: 10540d43d5ccca54f8451f9bf52bec2e, type: 3}
+    - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _description
       value: Buy this item to win the game!
       objectReference: {fileID: 0}

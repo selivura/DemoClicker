@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd047be128b4cba48a176a59fccc6343, type: 3}
-  m_Name: 00-Default_Banner
+  m_Name: 00-Level2_Banner
   m_EditorClassIdentifier: 
   _icon: {fileID: -5396196833375394948, guid: 31df8d6c6ecc98a46b8fe36a8d7056bd, type: 3}
   _bannerGraphicsPrefab: {fileID: 196888581106676516, guid: 443e402bea85b554ebb10d025252013e, type: 3}
-  _name: Default banner
+  _name: Level 2 banner
   _description: LETS GO GAMBLING
-  _ID: 83696ce0-eccd-4297-a7c0-ff40893c437f
+  _ID: b22226fc-a7b9-48f7-8955-360d480f14c3
   _key:
-    _item: {fileID: 4571904656985921601, guid: 956c099fed36ed34186a090a044f0682, type: 3}
+    _item: {fileID: 4571904656985921601, guid: efacb26a453c16c4997c99669c8a3da5, type: 3}
     _price: 1
   _softPityResetMinimalQuality: 2
   _softPityPerPull: 0.1
@@ -28,19 +28,19 @@ MonoBehaviour:
   - Quality: 2
     AmountOfPulls: 60
   - Quality: 3
-    AmountOfPulls: 80
+    AmountOfPulls: 90
   - Quality: 4
-    AmountOfPulls: 100
+    AmountOfPulls: 120
   _tierChances: {fileID: 11400000, guid: c424aa35ed4a27c4f80fb01a29935c22, type: 2}
   _bannerDrops:
     _serializedList:
     - Key: 0
-      Value: {fileID: 11400000, guid: d04a4a87e1714e648b21792bd52dfe04, type: 2}
+      Value: {fileID: 11400000, guid: d5ed59e11c048a0489472c39c08a6892, type: 2}
     - Key: 1
-      Value: {fileID: 11400000, guid: a35f77da9851efa42a2682617f4359ac, type: 2}
+      Value: {fileID: 11400000, guid: 636cd24b2530bec47902e90aa6c46c23, type: 2}
     - Key: 2
-      Value: {fileID: 11400000, guid: 06ecd354a72e2e548a12e68ee515a094, type: 2}
+      Value: {fileID: 11400000, guid: 03d376c926e4828498652d69dd321af5, type: 2}
     - Key: 3
-      Value: {fileID: 11400000, guid: 822819b06cd9d0a41b82f7056eccb134, type: 2}
+      Value: {fileID: 11400000, guid: 6acd2ec0be64de643961849d29e0799d, type: 2}
     - Key: 4
-      Value: {fileID: 11400000, guid: 609686a88454ec84eb33e354174af18e, type: 2}
+      Value: {fileID: 11400000, guid: 02fb434f16fb90b4e93562efbee20957, type: 2}

@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f215d5f41b1bfbf4b887f140c24e3f83, type: 3}
-  m_Name: 03-Default_LT_S
+  m_Name: 01-Level2_LT_B
   m_EditorClassIdentifier: 
   _loot:
   - Drop:
-      item: {fileID: 4571904656985921601, guid: 956c099fed36ed34186a090a044f0682, type: 3}
-      amount: 5
-    Weight: 1
-  - Drop:
-      item: {fileID: 8228023819946047994, guid: 9baae2019c0ac1044bbe22b26994797d, type: 3}
-      amount: 1
+      item: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
+      amount: 100
     Weight: 1

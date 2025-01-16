@@ -1467,6 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _starterBanners:
   - {fileID: 11400000, guid: 83e42ae9ae0ce7e4d9b3ed2922e5b89f, type: 2}
+  - {fileID: 11400000, guid: e40c79e71042afb4baefdfe87c1c48a9, type: 2}
 --- !u!1 &401642543
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,11 +7146,16 @@ MonoBehaviour:
     Price:
       _item: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       _price: 100
+  - ItemForSale: {fileID: 4571904656985921601, guid: efacb26a453c16c4997c99669c8a3da5, type: 3}
+    AmountForSale: 1
+    Price:
+      _item: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
+      _price: 1000
   - ItemForSale: {fileID: 5793994413163932349, guid: b6b6e677edbd6e04b84fb1120c44634d, type: 3}
     AmountForSale: 1
     Price:
       _item: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
-      _price: 10000000
+      _price: 1000000
 --- !u!1001 &1805964533
 PrefabInstance:
   m_ObjectHideFlags: 0

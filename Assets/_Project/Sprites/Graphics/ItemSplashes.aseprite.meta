@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c11b6e9c40d332a40a1db032f3e51b7a
+guid: 10540d43d5ccca54f8451f9bf52bec2e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638723942480836820
+  platformSettingsDirtyTick: 638726397770459507
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: ItemIcons
+  - name: ItemSplashes
     originalName: 
-    pivot: {x: 4.2333336, y: -15}
+    pivot: {x: 0.71428573, y: -9}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 30
-      height: 16
-    spriteID: 5a7460de0d9d15d46b13af7d5d0842cb
+      width: 336
+      height: 80
+    spriteID: 131aa1ddb5550d24c84ad8a5a4ed6838
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,7 +144,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: ItemIcons_0
+  - name: ItemSplashes_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -152,53 +152,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3
-      y: 244
-      width: 16
-      height: 16
-    spriteID: 05164eb579d0aad47bd734d9737d98f9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: ItemIcons_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 19
-      y: 244
-      width: 16
-      height: 16
-    spriteID: ba6637e446fba6a42973253b5d5e8842
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: ItemIcons_3
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 243
+      x: 4
       y: 4
-      width: 16
-      height: 16
-    spriteID: c59c57a5c99e5984aacfaf8eeb432ca6
+      width: 48
+      height: 80
+    spriteID: 19035623d0fcfa041a960f20a316cf1d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -207,7 +165,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: ItemIcons_2
+  - name: ItemSplashes_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -215,11 +173,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 35
-      y: 244
-      width: 16
-      height: 16
-    spriteID: a1ce0585c17137d42ad98ee872e0cba4
+      x: 52
+      y: 4
+      width: 48
+      height: 80
+    spriteID: 6fa01504d8ce78a4381589980459f830
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -228,7 +186,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: ItemIcons_4
+  - name: ItemSplashes_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -236,11 +194,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 51
-      y: 244
-      width: 16
-      height: 16
-    spriteID: ddc6edd97674fdb4d85c4804f8d7ab19
+      x: 100
+      y: 4
+      width: 48
+      height: 80
+    spriteID: 73b74cbac3d5d614d829750b2a34ca28
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -249,7 +207,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: ItemIcons_5
+  - name: ItemSplashes_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -257,11 +215,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 67
-      y: 244
-      width: 16
-      height: 16
-    spriteID: fe39cf4b204f5774c92977aa122acb5d
+      x: 148
+      y: 4
+      width: 48
+      height: 80
+    spriteID: c2d739a02dc7f7b41a653ab1b60d18f3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -270,7 +228,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: ItemIcons_6
+  - name: ItemSplashes_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -278,11 +236,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 83
-      y: 244
-      width: 16
-      height: 16
-    spriteID: a6125a05e08836b49aee8385bf563bae
+      x: 196
+      y: 4
+      width: 48
+      height: 80
+    spriteID: b28473f5413ed844e9069a1f2ddfbd51
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -291,7 +249,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: ItemIcons_7
+  - name: ItemSplashes_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -299,11 +257,32 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 99
-      y: 244
-      width: 16
-      height: 16
-    spriteID: bd4b4e1de56fc084f9dc2781b8f1ccdb
+      x: 244
+      y: 4
+      width: 48
+      height: 80
+    spriteID: e8559607974e5a642af21cdde886c71f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: ItemSplashes_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 292
+      y: 4
+      width: 48
+      height: 80
+    spriteID: 0e94fd75621bde44595f18fbf7872811
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -314,21 +293,21 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -1230083139
-    name: ItemIcons
+    guid: -640592714
+    name: ItemSplashes
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: ItemIcons
+    - name: ItemSplashes
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
-        width: 253
-        height: 256
-      spriteId: 5a7460de0d9d15d46b13af7d5d0842cb
+        x: 0
+        y: 720
+        width: 336
+        height: 80
+      spriteId: 131aa1ddb5550d24c84ad8a5a4ed6838
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -371,4 +350,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 256, y: 256}
+  canvasSize: {x: 480, y: 800}

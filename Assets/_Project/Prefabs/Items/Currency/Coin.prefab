@@ -73,6 +73,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
+      propertyPath: _splashArt
+      value: 
+      objectReference: {fileID: 521791767500158056, guid: 10540d43d5ccca54f8451f9bf52bec2e, type: 3}
+    - target: {fileID: 6714317784913968578, guid: 147450844cf0edc409e83de291b020dd, type: 3}
       propertyPath: _description
       value: Can be used to buy somenthing in the shop.
       objectReference: {fileID: 0}

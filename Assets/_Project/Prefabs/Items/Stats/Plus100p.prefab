@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3911833221981806661, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: m_Name
-      value: Mult2
+      value: Plus100p
       objectReference: {fileID: 0}
     - target: {fileID: 5159643707884206700, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: 8372458563863392813, guid: c11b6e9c40d332a40a1db032f3e51b7a, type: 3}
+      objectReference: {fileID: -8200367120316284141, guid: c11b6e9c40d332a40a1db032f3e51b7a, type: 3}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _name
       value: +100%
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: _quality
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
+      propertyPath: _splashArt
+      value: 
+      objectReference: {fileID: 763731593812711779, guid: 10540d43d5ccca54f8451f9bf52bec2e, type: 3}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _description
       value: +100% Coins per click

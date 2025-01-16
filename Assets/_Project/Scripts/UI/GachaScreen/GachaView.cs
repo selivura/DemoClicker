@@ -1,5 +1,6 @@
 using R3;
 using Selivura.DemoClicker.UI;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -55,7 +56,8 @@ namespace Selivura.DemoClicker
         {
             _viewModel.GetMissingItemsInfo(amount, out int missingAmount, out int requiredCurrency, out ShopLot shopLot, out Item missingItem);
             _confirmation.SetDefaultText();
-            _confirmation.SetTextMessage($"Would you like to buy missing {missingItem.Name} x {missingAmount} for x {requiredCurrency} {shopLot.Price.Item.Name}?");
+            string newLine = Environment.NewLine;
+            _confirmation.SetTextMessage($"Would you like to buy missing {newLine}{missingAmount} x {missingItem.Name}{newLine} for {newLine}{requiredCurrency} x {shopLot.Price.Item.Name}?");
             _confirmation.ShowWindow();
             _confirmation.OnConfirm.Subscribe(_ => ConfirmToBuyMissing(amount));
         }

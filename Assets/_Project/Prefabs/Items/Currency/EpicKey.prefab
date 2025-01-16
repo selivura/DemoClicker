@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: _ID
-      value: 587df280-bb2b-47d1-b073-25fb5ccbb9f1
+      value: 7fba83ef-d3ba-48c5-a8ff-3b1251f24b4d
       objectReference: {fileID: 0}
     - target: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: 5023297519736640731, guid: c11b6e9c40d332a40a1db032f3e51b7a, type: 3}
+      objectReference: {fileID: 7372264881295487933, guid: c11b6e9c40d332a40a1db032f3e51b7a, type: 3}
     - target: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: _name
-      value: Key
+      value: Epic key
       objectReference: {fileID: 0}
     - target: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: price
@@ -26,12 +26,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: _quality
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: _splashArt
       value: 
-      objectReference: {fileID: -833192390261084179, guid: 10540d43d5ccca54f8451f9bf52bec2e, type: 3}
+      objectReference: {fileID: 7481162121190548811, guid: 10540d43d5ccca54f8451f9bf52bec2e, type: 3}
     - target: {fileID: 1018635142170330531, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: _description
       value: Can be used to pull banners.
@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7512486817725961488, guid: a0d0707511c9bd9468610b6abe44bf88, type: 3}
       propertyPath: m_Name
-      value: Key
+      value: EpicKey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
