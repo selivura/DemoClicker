@@ -9,7 +9,6 @@ namespace Selivura.DemoClicker
     public class GachaService : MonoBehaviour, ISaveable<List<BannerSaveData>>
     {
         [Inject] InventoryService _inventoryService;
-        [Inject] DataSavingService _dataSavingService;
 
         [SerializeField] List<GachaBanner> _starterBanners= new();
 

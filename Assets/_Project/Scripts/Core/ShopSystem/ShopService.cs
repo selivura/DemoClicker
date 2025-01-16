@@ -26,6 +26,14 @@ namespace Selivura.DemoClicker
                 _inventoryService.RemoveItem(lot.Price.Item, lot.Price.Price);
             }
         }
+        public bool FindItemForSale(Item item, out ShopLot lot)
+        {
+            lot = _itemsForSale.Find((searchLot) =>
+            {
+                return searchLot.ItemForSale == item;
+            });
+            return lot != null;
+        }
     }
     [System.Serializable]
     public class ShopLot

@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcb9a4e358785747b657bd254ffc425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _confirmation: {fileID: 863340190}
   _viewModel: {fileID: 49067388}
   _bannerFrame: {fileID: 1358376360}
   _x1Button: {fileID: 1245960211}
@@ -1466,7 +1467,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _starterBanners:
   - {fileID: 11400000, guid: 83e42ae9ae0ce7e4d9b3ed2922e5b89f, type: 2}
-  - {fileID: 11400000, guid: ffe8332fdd7b7b64096238deb19264a4, type: 2}
 --- !u!1 &401642543
 GameObject:
   m_ObjectHideFlags: 0

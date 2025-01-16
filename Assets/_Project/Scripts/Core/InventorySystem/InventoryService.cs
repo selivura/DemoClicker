@@ -1,6 +1,7 @@
 using R3;
 using Selivura.DemoClicker.Persistence;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using Zenject;
 
@@ -10,6 +11,7 @@ namespace Selivura.DemoClicker
     {
         [SerializeField] GameItemsList _gameItemList;
         [Inject] DiContainer _diContainer;
+        [Inject] ShopService _shopService;
 
         private readonly List<Item> _items = new();
 
@@ -31,7 +33,7 @@ namespace Selivura.DemoClicker
 #endif
         public bool CanAfford(ItemPrice itemPrice, int amount = 1)
         {
-            if (!HasItem(itemPrice.Item, out Item found))
+            if (!FindItem(itemPrice.Item, out Item found))
                 return false;
             if (found.Stack < itemPrice.Price * amount)
                 return false;
@@ -60,9 +62,9 @@ namespace Selivura.DemoClicker
         }
         public bool HasItem(Item item)
         {
-            return HasItem(item, out _);
+            return FindItem(item, out _);
         }
-        public bool HasItem(Item item, out Item found)
+        public bool FindItem(Item item, out Item found)
         {
             found = FindItemByID(item.ID);
             if (found != null)
@@ -131,7 +133,27 @@ namespace Selivura.DemoClicker
                 GiveItem(_gameItemList.Items.Find((foundItem) => { return foundItem.ID == savedItem.ID; }), savedItem.Stack);
             }
         }
+        
+        public bool CanBuyMissingInShop(ItemPrice priceToPay, int amountToBuy, out int missingAmount, out int requiredCurrency, out ShopLot shopLot)
+        {
+            missingAmount = priceToPay.Price * amountToBuy;
+            requiredCurrency = 0;
 
+            if (!_shopService.FindItemForSale(priceToPay.Item, out shopLot))
+                return false;
+
+            if (!FindItem(shopLot.Price.Item, out Item funds))
+                return false;
+
+            if (FindItem(priceToPay.Item, out Item missingItem))
+                missingAmount = priceToPay.Price * amountToBuy - missingItem.Stack;
+
+            requiredCurrency = Mathf.CeilToInt(missingAmount / (float)shopLot.AmountForSale) * shopLot.Price.Price;
+
+            if (funds.Stack < requiredCurrency)
+                return false;
+            return true;
+        }
     }
     [System.Serializable]
     public class SavedInventory

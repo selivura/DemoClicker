@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3911833221981806661, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: m_Name
-      value: PlusOne
+      value: Mult2
       objectReference: {fileID: 0}
     - target: {fileID: 5159643707884206700, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _ID
-      value: 4a220a44-4e50-4321-ae27-dc78e403a90c
+      value: 20ed9cc5-c429-4c52-bda5-08d557da44e7
       objectReference: {fileID: 0}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _icon
@@ -62,23 +62,31 @@ PrefabInstance:
       objectReference: {fileID: 8372458563863392813, guid: c11b6e9c40d332a40a1db032f3e51b7a, type: 3}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _name
-      value: +1
+      value: +100%
       objectReference: {fileID: 0}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _quality
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _description
-      value: +1 Coin per click
+      value: +100% Coins per click
       objectReference: {fileID: 0}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
       propertyPath: _stats._serializedList.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
-      propertyPath: _stats._serializedList.Array.data[0].Value.Value
+      propertyPath: _stats._serializedList.Array.data[0].Value.Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
+      propertyPath: _stats._serializedList.Array.data[0].Value.Order
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628682417149515073, guid: 84b5099f2364b3744b36d2f310642d2a, type: 3}
+      propertyPath: _stats._serializedList.Array.data[0].Value.Value
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

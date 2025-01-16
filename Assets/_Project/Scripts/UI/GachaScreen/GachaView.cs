@@ -9,6 +9,7 @@ namespace Selivura.DemoClicker
     {
         private GachaBannerHolder _currentHolder;
 
+        [SerializeField] ConfirmationWindow _confirmation;
         [SerializeField] GachaViewModel _viewModel;
         [SerializeField] Transform _bannerFrame;
 
@@ -44,9 +45,29 @@ namespace Selivura.DemoClicker
             _viewModel.OnBannerHolderChanged.Subscribe(OnBannerChanged).AddTo(_disposable);
             _viewModel.OnBannersUpdated.Subscribe(OnBannersUpdated).AddTo(_disposable);
             _viewModel.OnInventoryUpdated.Subscribe(_ => UpdateButtons()).AddTo(_disposable);
+            _viewModel.OnPulled.Subscribe(OnPull).AddTo(_disposable);
+            _viewModel.OnCanBuyMissingItems.Subscribe(PromptToBuyMissing).AddTo(_disposable);
 
             _x1Button.OnButtonClick.AsObservable().Subscribe(_ => OnX1ButtonClicked()).AddTo(_disposable);
             _x10Button.OnButtonClick.AsObservable().Subscribe(_ => OnX10ButtonClicked()).AddTo(_disposable);
+        }
+        private void PromptToBuyMissing(int amount)
+        {
+            _viewModel.GetMissingItemsInfo(amount, out int missingAmount, out int requiredCurrency, out ShopLot shopLot, out Item missingItem);
+            _confirmation.SetDefaultText();
+            _confirmation.SetTextMessage($"Would you like to buy missing {missingItem.Name} x {missingAmount} for x {requiredCurrency} {shopLot.Price.Item.Name}?");
+            _confirmation.ShowWindow();
+            _confirmation.OnConfirm.Subscribe(_ => ConfirmToBuyMissing(amount));
+        }
+        private void ConfirmToBuyMissing(int amount)
+        {
+            _viewModel.BuyMissingAndPull(amount);
+        }
+        private void OnPull(List<GachaDrop> drop)
+        {
+            _resultsWindow.SetDrop(drop);
+            _resultsWindow.ShowWindow();
+            UpdateButtons();
         }
         private void UpdateButtons()
         {
@@ -55,15 +76,13 @@ namespace Selivura.DemoClicker
         }
         private void OnX1ButtonClicked()
         {
-            _resultsWindow.SetDrop(_currentHolder.Pull());
-            _resultsWindow.ShowWindow(); 
-            UpdateButton(_x1Button, 1);
+            _viewModel.Pull(1);
+            UpdateButtons();
         }
         private void OnX10ButtonClicked()
         {
-            _resultsWindow.SetDrop(_currentHolder.Pull(10));
-            _resultsWindow.ShowWindow();
-            UpdateButton(_x10Button, 10);
+            _viewModel.Pull(10);
+            UpdateButtons();
         }
         private void OnBannerChanged(GachaBannerHolder holder)
         {
@@ -77,7 +96,7 @@ namespace Selivura.DemoClicker
         {
             button.TextWithIcon.IconImage.sprite = _currentHolder.Banner.Key.Item.Icon;
             button.TextWithIcon.Text.text = "x" + _currentHolder.Banner.Key.Price * pullAmount;
-            button.ButtonComponent.interactable = _currentHolder.CanPull(pullAmount);
+            button.ButtonComponent.interactable = _viewModel.CanPull(pullAmount);
         }
         private void OnDestroy()
         {
